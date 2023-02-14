@@ -1,8 +1,8 @@
 var generateBtn = document.querySelector("#generate");
 
-function writePassword(word) {
+function writePassword() {
   var passwordText = document.querySelector("#password");
-  passwordText.value = word;
+  passwordText.value = password;
 };
 
 function Prompt () {
@@ -28,5 +28,5 @@ for (var i = 0; i <= passwordLength; i++) {
 };
 
 
-generateBtn.addEventListener("click",generatePassword);
+generateBtn.addEventListener("click",writePassword);
 generateBtn.addEventListener("click", Prompt);
