@@ -1,9 +1,16 @@
 var generateBtn = document.querySelector("#generate");
+var passwordText = document.querySelector("#password");
+
+var abcOptions = "abcdefghijklmnopqrstuvwxyz"
+var numberOptions = "1,2,3,4,5,6,7,8,9";
+var specialCharacterOptions = " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+var abcOptionsUpperCase = abcOptions.toUpperCase();
+
 
 function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
-};
+}
 
 function Prompt () {
   var password;
@@ -16,15 +23,14 @@ function Prompt () {
 }
 
 function generatePassword(){
-  var charset = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var passwordLength= 8;
-  var password= "";
-for (var i = 0; i <= passwordLength; i++) {
-  var randomNumber = Math.floor(Math.random() * charset.length);
-  password += charset.substring(randomNumber, randomNumber +1);
- }
-  returnpassword;
-    document.getElementById("password").value = password;
+ var length = passwordLength();
+ var charSelection = characters();
+ var finalPassword = "";
+for (var i = 0; i <= length; i++) {
+  var randSelection = Math.floor(Math.random() * charSelection.length);
+    finalPassword += charSelection[randSelection];
+  }
+  return finalPassword;
 };
 
 
